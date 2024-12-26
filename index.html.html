@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理测试：你在UU的本中扮演谁？</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .question, .result {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        .btn {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        h1, h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>来看看你在UU的本中扮演哪个吊人吧！</h1>
+    <div id="quiz">
+        <div class="question" data-id="0">
+            <p>你想体验男生角色还是女生角色？</p>
+            <button class="btn" onclick="setGender('male')">男生</button>
+            <button class="btn" onclick="setGender('female')">女生</button>
+        </div>
+
+        <!-- 男生线问题 -->
+        <div class="question hidden" data-gender="male" data-id="1">
+            <p>你如何看待社会规则？</p>
+            <button class="btn" onclick="answer('萧景和')">A. 不在乎，反正我从来就不用遵守规则。</button>
+            <button class="btn" onclick="answer('容隐')">B. 规则是束缚，但我会利用规则达到我想要的。</button>
+            <button class="btn" onclick="answer('云湛')">C. 规则是我的武器，用它压制所有反抗者。</button>
+        </div>
+        <div class="question hidden" data-gender="male" data-id="2">
+            <p>当有人试图挑战你时，你会如何应对？</p>
+            <button class="btn" onclick="answer('容隐')">A. 笑着看他们挣扎，再用毒蛇般的方式送他们灭亡。</button>
+            <button class="btn" onclick="answer('云湛')">B. 用规则将对方彻底碾压，让他明白无法翻身的恐惧。</button>
+            <button class="btn" onclick="answer('萧景和')">C. 有意思，不如虐杀一个玩玩。</button>
+        </div>
+        <div class="question hidden" data-gender="male" data-id="3">
+            <p>你如何定义“掌控”？</p>
+            <button class="btn" onclick="answer('容隐')">A. 掌控是伪装自己，隐藏锋芒，等待最好的时机反击。</button>
+            <button class="btn" onclick="answer('云湛')">B. 掌控是让所有人都在规则中挣扎，而你站在规则顶端冷眼旁观。</button>
+            <button class="btn" onclick="answer('萧景和')">C. 掌控是彻底破坏秩序，让世界臣服于混乱。</button>
+        </div>
+        <div class="question hidden" data-gender="male" data-id="4">
+            <p>你追求的究竟是什么？</p>
+            <button class="btn" onclick="answer('萧景和')">A. 刺激与混乱，让世界永远无法预测下一步。</button>
+            <button class="btn" onclick="answer('云湛')">B. 无上权力，所有人都必须按照我的规则行事。</button>
+            <button class="btn" onclick="answer('容隐')">C. 我想要的，不过是那个人永远留在我身边，不论她愿不愿意。</button>
+        </div>
+        <div class="question hidden" data-gender="male" data-id="5">
+            <p>如果有机会重新来过，你会选择什么？</p>
+            <button class="btn" onclick="answer('萧景和')">A. 将一切打碎重塑，无所谓秩序，只求疯狂与新奇。</button>
+            <button class="btn" onclick="answer('容隐')">B. 即便代价是她的生命，也要永远禁锢她在我身边。</button>
+            <button class="btn" onclick="answer('云湛')">C. 重新掌控所有规则，让世界更加完整地运行，而我依旧是俯瞰全局的既得利益者。</button>
+        </div>
+
+        <!-- 女生线问题 -->
+        <div class="question hidden" data-gender="female" data-id="1">
+            <p>你如何看待社会规则？</p>
+            <button class="btn" onclick="answer('晏千颜')">A. 我想让它变得更公平，尽可能地为更多人服务。</button>
+            <button class="btn" onclick="answer('沉央')">B. 规则是实现目标的工具，如何用取决于野心。</button>
+            <button class="btn" onclick="answer('姒宁')">C. 规则并不重要，我更在意自由。</button>
+        </div>
+        <div class="question hidden" data-gender="female" data-id="2">
+            <p>当有人试图挑战你时，你会如何应对？</p>
+            <button class="btn" onclick="answer('姒宁')">A. 装柔弱，让他们放松警惕，然后狠狠咬住他们的脖子。</button>
+            <button class="btn" onclick="answer('晏千颜')">B. 给予机会，只要他能证明自己值得一试。</button>
+            <button class="btn" onclick="answer('沉央')">C. 笑着看他们挣扎，再如毒蛇一般的方式送他们灭亡。</button>
+        </div>
+        <div class="question hidden" data-gender="female" data-id="3">
+            <p>你如何定义“掌控”？</p>
+            <button class="btn" onclick="answer('晏千颜')">A. 掌控是我无愧于心，坦然面对所有选择的结果。</button>
+            <button class="btn" onclick="answer('沉央')">B. 掌控是巧妙利用他人的欲望，为我达成最终目标。</button>
+            <button class="btn" onclick="answer('姒宁')">C. 掌控？不需要掌控，我追求的是纯粹的自由和未知。</button>
+        </div>
+        <div class="question hidden" data-gender="female" data-id="4">
+            <p>你追求的究竟是什么？</p>
+            <button class="btn" onclick="answer('晏千颜')">A. 我有我自己的理想，愿为之付出代价，但选择权始终握在自己手中。</button>
+            <button class="btn" onclick="answer('沉央')">B. 至高的权势，高到无人能够伤害我。</button>
+            <button class="btn" onclick="answer('姒宁')">C. 自由，无拘无束的活着，脱离任何束缚。</button>
+        </div>
+        <div class="question hidden" data-gender="female" data-id="5">
+            <p>如果有机会重新来过，你会选择什么？</p>
+            <button class="btn" onclick="answer('晏千颜')">A. 尽我所能，不留遗憾，问心无愧地选择理想主义。</button>
+            <button class="btn" onclick="answer('沉央')">B. 拿到至高的权势，用它保护我在意的人。</button>
+            <button class="btn" onclick="answer('姒宁')">C. 改变命运，只求不再被束缚，不再受人操控。</button>
+        </div>
+    </div>
+
+    <div class="result hidden">
+        <h2>测试结果</h2>
+        <p id="result-text"></p>
+    </div>
+
+    <script>
+        let currentQuestion = 0;
+        const scores = {
+            '萧景和': 0,
+            '容隐': 0,
+            '云湛': 0,
+            '晏千颜': 0,
+            '沉央': 0,
+            '姒宁': 0
+        };
+        let gender = '';
+
+        function setGender(selectedGender) {
+            gender = selectedGender;
+            showNextQuestion();
+        }
+
+        function answer(character) {
+            scores[character]++;
+            showNextQuestion();
+        }
+
+        function showNextQuestion() {
+            const questions = document.querySelectorAll('.question');
+            const current = questions[currentQuestion];
+            if (current) current.classList.add('hidden');
+
+            currentQuestion++;
+            const next = Array.from(questions).find(
+                q => q.dataset.id == currentQuestion && q.dataset.gender === gender
+            );
+            if (next) {
+                next.classList.remove('hidden');
+            } else {
+                calculateResults();
+            }
+        }
+
+        function calculateResults() {
+            const totalScore = Object.values(scores).reduce((a, b) => a + b, 0);
+            const percentages = Object.fromEntries(
+                Object.entries(scores).map(([key, value]) => [key, Math.round((value / totalScore) * 100)])
+            );
+
+            const quotes = {
+                '云湛': '主人。？',
+                '容隐': '这世界万般荒谬，我只要你。',
+                '萧景和': '没有刺激，就没有意义。让我听听你痛苦的声音。',
+                '晏千颜': '我相信真相，也相信爱。',
+                '沉央': '权力至上，柔情于我，不过一把刀。',
+                '姒宁': '你可以带我回家吗？'
+            };
+
+            const resultText = Object.entries(percentages)
+                .filter(([_, value]) => value > 0)
+                .map(([key, value]) => `${key}: ${value}%<br>${quotes[key]}`)
+                .join('<br><br>');
+
+            document.querySelector('#result-text').innerHTML = resultText;
+            document.querySelector('.result').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
