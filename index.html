@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-    <h1>来看看你在UU的本中扮演哪个吊人吧！</h1>
+    <h1>来看看你在UU的吊本中扮演哪个吊人吧！</h1>
     <div id="quiz">
         <div class="question" data-id="0">
             <p>你想体验男生角色还是女生角色？</p>
@@ -84,32 +84,32 @@
         <div class="question hidden" data-gender="female" data-id="1">
             <p>你如何看待社会规则？</p>
             <button class="btn" onclick="answer('晏千颜')">A. 我想让它变得更公平，尽可能地为更多人服务。</button>
-            <button class="btn" onclick="answer('沉央')">B. 规则是实现目标的工具，如何用取决于野心。</button>
-            <button class="btn" onclick="answer('姒宁')">C. 规则并不重要，我更在意自由。</button>
+            <button class="btn" onclick="answer('昭贵妃')">B. 规则是实现目标的工具，如何用取决于野心。</button>
+            <button class="btn" onclick="answer('阿宁')">C. 规则并不重要，我更在意自由。</button>
         </div>
         <div class="question hidden" data-gender="female" data-id="2">
             <p>当有人试图挑战你时，你会如何应对？</p>
-            <button class="btn" onclick="answer('姒宁')">A. 装柔弱，让他们放松警惕，然后狠狠咬住他们的脖子。</button>
+            <button class="btn" onclick="answer('阿宁')">A. 装柔弱，让他们放松警惕，然后狠狠咬住他们的脖子。</button>
             <button class="btn" onclick="answer('晏千颜')">B. 给予机会，只要他能证明自己值得一试。</button>
-            <button class="btn" onclick="answer('沉央')">C. 笑着看他们挣扎，再如毒蛇一般的方式送他们灭亡。</button>
+            <button class="btn" onclick="answer('昭贵妃')">C. 笑着看他们挣扎，再如毒蛇一般的方式送他们灭亡。</button>
         </div>
         <div class="question hidden" data-gender="female" data-id="3">
             <p>你如何定义“掌控”？</p>
             <button class="btn" onclick="answer('晏千颜')">A. 掌控是我无愧于心，坦然面对所有选择的结果。</button>
-            <button class="btn" onclick="answer('沉央')">B. 掌控是巧妙利用他人的欲望，为我达成最终目标。</button>
-            <button class="btn" onclick="answer('姒宁')">C. 掌控？不需要掌控，我追求的是纯粹的自由和未知。</button>
+            <button class="btn" onclick="answer('昭贵妃')">B. 掌控是巧妙利用他人的欲望，为我达成最终目标。</button>
+            <button class="btn" onclick="answer('阿宁')">C. 掌控？不需要掌控，我追求的是纯粹的自由和未知。</button>
         </div>
         <div class="question hidden" data-gender="female" data-id="4">
             <p>你追求的究竟是什么？</p>
             <button class="btn" onclick="answer('晏千颜')">A. 我有我自己的理想，愿为之付出代价，但选择权始终握在自己手中。</button>
-            <button class="btn" onclick="answer('沉央')">B. 至高的权势，高到无人能够伤害我。</button>
-            <button class="btn" onclick="answer('姒宁')">C. 自由，无拘无束的活着，脱离任何束缚。</button>
+            <button class="btn" onclick="answer('昭贵妃')">B. 至高的权势，高到无人能够伤害我。</button>
+            <button class="btn" onclick="answer('阿宁')">C. 自由，无拘无束的活着，脱离任何束缚。</button>
         </div>
         <div class="question hidden" data-gender="female" data-id="5">
             <p>如果有机会重新来过，你会选择什么？</p>
             <button class="btn" onclick="answer('晏千颜')">A. 尽我所能，不留遗憾，问心无愧地选择理想主义。</button>
-            <button class="btn" onclick="answer('沉央')">B. 拿到至高的权势，用它保护我在意的人。</button>
-            <button class="btn" onclick="answer('姒宁')">C. 改变命运，只求不再被束缚，不再受人操控。</button>
+            <button class="btn" onclick="answer('昭贵妃')">B. 拿到至高的权势，用它保护我在意的人。</button>
+            <button class="btn" onclick="answer('阿宁')">C. 改变命运，只求不再被束缚，不再受人操控。</button>
         </div>
     </div>
 
@@ -125,8 +125,8 @@
             '容隐': 0,
             '云湛': 0,
             '晏千颜': 0,
-            '沉央': 0,
-            '姒宁': 0
+            '昭贵妃': 0,
+            '阿宁': 0
         };
         let gender = '';
 
@@ -167,8 +167,8 @@
                 '容隐': '这世界万般荒谬，我只要你。',
                 '萧景和': '没有刺激，就没有意义。让我听听你痛苦的声音。',
                 '晏千颜': '我相信真相，也相信爱。',
-                '沉央': '权力至上，柔情于我，不过一把刀。',
-                '姒宁': '你可以带我回家吗？'
+                '昭贵妃': '权力至上，柔情于我，不过一把刀。',
+                '阿宁': '你可以带我回家吗？'
             };
 
             const resultText = Object.entries(percentages)
